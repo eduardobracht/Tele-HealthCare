@@ -3,6 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
+@author Daniel Machado
+@author Eduardo Mallmann
+@author Leandro Oliveira
+*/
+
+
 package userinterface;
 
 import Business.DB4OUtility.DB4OUtility;
