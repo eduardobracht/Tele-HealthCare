@@ -85,9 +85,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, -1, -1));
 
         passwordField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        passwordField.setNextFocusableComponent(loginJButton);
         jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 100, -1));
 
         userNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        userNameJTextField.setNextFocusableComponent(passwordField);
         userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameJTextFieldActionPerformed(evt);
@@ -97,6 +99,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         loginJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         loginJButton.setText("Login");
+        loginJButton.setNextFocusableComponent(logoutJButton);
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginJButtonActionPerformed(evt);
