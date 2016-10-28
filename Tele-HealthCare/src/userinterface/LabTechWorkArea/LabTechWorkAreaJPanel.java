@@ -75,7 +75,7 @@ public class LabTechWorkAreaJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 561, 240, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, 240, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
