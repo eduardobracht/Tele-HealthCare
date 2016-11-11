@@ -10,12 +10,21 @@ package Business.VitalSign;
  * @author Neelu
  */
 public class VitalSign {
-     private int respiratoryRate;
+    private int respiratoryRate;
     private int heartRate;
     private int bloodPressure;
     private int weight;
     private String timestamp;
     private String statusReport;
+
+    public VitalSign(int respiratoryRate, int heartRate, int bloodPressure, int weight,String timestamp, String statusReport) {
+        this.respiratoryRate = respiratoryRate;
+        this.heartRate = heartRate;
+        this.bloodPressure = bloodPressure;
+        this.weight = weight;
+        this.timestamp = timestamp;
+        this.statusReport = statusReport;
+    }
 
     public int getRespiratoryRate() {
         return respiratoryRate;
