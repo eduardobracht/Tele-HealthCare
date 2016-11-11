@@ -326,12 +326,15 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
        
         populateRequestTable();
         
-        
+        //save on database
+        //
 
         JOptionPane.showMessageDialog(null, "Medical Records have been updated with Vital Signs for the Patient: "+request.getMessage(), "information", JOptionPane.INFORMATION_MESSAGE);
 
         resetFields();
         }
+        
+        
         
         
         
