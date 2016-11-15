@@ -10,7 +10,7 @@ import org.junit.Test;
 
 /**
  *
- * @author 09100324
+ * @author Daniel Machado
  */
 public class TestVitalSign {
     
@@ -40,25 +40,50 @@ public class TestVitalSign {
 
     }
 
-
+    @Test
     public void testValidHeartRate() {
-
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        
+        int actual = v.getHeartRate();
+        int expected = 120;
+        assertEquals(expected,actual);
     }
 
+    @Test
     public void testValidBloodPressure() {
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        
+        int actual = v.getBloodPressure();
+        int expected = 12;
+        assertEquals(expected,actual);
 
     }
-
+    
+    @Test
     public void testValidWeight() {
-
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        
+        int actual = v.getWeight();
+        int expected = 90;
+        assertEquals(expected,actual);
     }
 
+    @Test
     public void testValidTimestamp() {
-
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        
+        String actual = v.getTimestamp();
+        String expected = "2016-05-20 11:00:05";
+        assertEquals(expected,actual);
     }
-
+    
+    @Test
     public void testValidStatusReport() {
-
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        
+        String actual = v.getStatusReport();
+        String expected = "Sinais vitais normais";
+        assertEquals(expected,actual);
     }
 
 }
