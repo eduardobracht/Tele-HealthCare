@@ -25,6 +25,10 @@ public class VitalSign {
         this.timestamp = timestamp;
         this.statusReport = statusReport;
     }
+    
+    public VitalSign(){
+        
+    }
 
     public int getRespiratoryRate() {
         return respiratoryRate;

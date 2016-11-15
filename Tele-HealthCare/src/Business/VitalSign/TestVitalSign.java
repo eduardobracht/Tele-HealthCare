@@ -13,11 +13,14 @@ import org.junit.Test;
  * @author 09100324
  */
 public class TestVitalSign {
-        
+    
+    @Test
     public void testValidRespiratoryRate() {
-        VitalSign v = new VitalSign(100,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
+        VitalSign v = new VitalSign(10,120,12,90,"2016-05-20 11:00:05","Sinais vitais normais");
         
-        
+        int actual = v.getRespiratoryRate();
+        int expected = 10;
+        assertEquals(expected,actual);
         /*
         
         private int respiratoryRate;
@@ -49,7 +52,6 @@ public class TestVitalSign {
     public void testValidWeight() {
 
     }
-
 
     public void testValidTimestamp() {
 
