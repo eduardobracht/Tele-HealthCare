@@ -10,6 +10,7 @@ package Persistence.VitalSign;
  * @author Neelu
  */
 public class VitalSignDTO {
+    private int patientId;
     private int respiratoryRate;
     private int heartRate;
     private int bloodPressure;
@@ -17,6 +18,27 @@ public class VitalSignDTO {
     private String timestamp;
     private String statusReport;
 
+    public VitalSignDTO() {
+    }
+    
+    public VitalSignDTO(int patientId, int respiratoryRate, int heartRate, int bloodPressure, int weight, String timestamp, String statusReport) {
+        this.patientId = patientId;
+        this.respiratoryRate = respiratoryRate;
+        this.heartRate = heartRate;
+        this.bloodPressure = bloodPressure;
+        this.weight = weight;
+        this.timestamp = timestamp;
+        this.statusReport = statusReport;
+    }
+    
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+    
     public int getRespiratoryRate() {
         return respiratoryRate;
     }

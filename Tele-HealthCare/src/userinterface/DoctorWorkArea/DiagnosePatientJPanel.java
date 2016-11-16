@@ -27,6 +27,7 @@ import com.skype.Skype;
 import com.skype.SkypeException;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.io.File;
 import java.time.Clock;
 import java.util.HashMap;
 import javax.swing.JPanel;
@@ -1240,8 +1241,8 @@ public class DiagnosePatientJPanel extends javax.swing.JPanel {
         JasperPrint jasperPrint = null;
         
         try {
-            JasperCompileManager.compileReportToFile(System.getProperty("user.dir") +"\\Reports3\\newReport.jrxml");
-            jasperPrint = JasperFillManager.fillReport(System.getProperty("user.dir") +"\\Reports3\\AircraftReportColumnIndex.jasper", new HashMap(),
+            JasperCompileManager.compileReportToFile(System.getProperty("user.dir") + File.separator + "Reports3" + File.separator + "newReport.jrxml");
+            jasperPrint = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separator + "Reports3" + File.separator + "AircraftReportColumnIndex.jasper", new HashMap(),
                     new JRTableModelDataSource(tableModel));
             JasperViewer jasperViewer = new JasperViewer(jasperPrint);
             jasperViewer.setVisible(true);

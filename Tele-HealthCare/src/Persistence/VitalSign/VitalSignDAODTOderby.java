@@ -21,8 +21,8 @@ public class VitalSignDAODTOderby implements VitalSignDAO {
     @Override
     public List<VitalSignDTO> buscarTodos() throws Exception {
         List<VitalSignDTO> vsList = new ArrayList<>();
-        String sql = "select * from editoras";
-        try (Connection conexao = InicializadorBancoDadosDataSource.conectarBd()) {
+        String sql = "select * from vitalsign";
+        try (Connection conexao = StartDBDataSource.conectarBd()) {
             try (Statement comando = conexao.createStatement()) {
                 try (ResultSet resultado = comando.executeQuery(sql)) {
                     while (resultado.next()) {
@@ -45,9 +45,9 @@ public class VitalSignDAODTOderby implements VitalSignDAO {
 
     @Override
     public VitalSignDTO buscarPorCodigo(int codigo) throws Exception {
-        String sql = "select * from editoras where codigo = ?";
+        String sql = "select * from vitalsign where codigo = ?";
         VitalSignDTO vs = null;
-        try (Connection conexao = InicializadorBancoDadosDataSource.conectarBd()) {
+        try (Connection conexao = StartDBDataSource.conectarBd()) {
             try (PreparedStatement comando = conexao.prepareStatement(sql)) {
                 comando.setInt(1, codigo);
                 try (ResultSet resultado = comando.executeQuery()) {
@@ -69,13 +69,18 @@ public class VitalSignDAODTOderby implements VitalSignDAO {
     }
 
     @Override
-    public void inserir(VitalSignDTO ed) throws Exception {
-        String sql = "insert into editoras(codigo,nome) values(?,?)";
+    public void inserir(VitalSignDTO vs) throws Exception {
+        String sql = "insert into vitalsign(patient, respiratoryRate, heartRate, bloodPressure, weight, timestamp, statusReport) values(?,?,?,?,?,?,?)";
         int resultado = 0;
-        try (Connection conexao = InicializadorBancoDadosDataSource.conectarBd()) {
+        try (Connection conexao = StartDBDataSource.conectarBd()) {
             try (PreparedStatement comando = conexao.prepareStatement(sql)) {
-                comando.setInt(1, ed.getCodigo());
-                comando.setString(2, ed.getNome());
+                comando.setInt(1, vs.getPatientId());
+                comando.setInt(2, vs.getRespiratoryRate());
+                comando.setInt(3, vs.getHeartRate());
+                comando.setInt(4, vs.getBloodPressure());
+                comando.setInt(5, vs.getWeight());
+                comando.setString(6, vs.getTimestamp());
+                comando.setString(7, vs.getStatusReport());
                 resultado = comando.executeUpdate();
             }
         } catch (Exception e) {
@@ -87,21 +92,21 @@ public class VitalSignDAODTOderby implements VitalSignDAO {
     }
 
     @Override
-    public void alterar(VitalSignDTO ed) throws Exception {
-        String sql = "update editoras set nome=? where codigo=?";
-        int resultado = 0;
-        try (Connection conexao = InicializadorBancoDadosDataSource.conectarBd()) {
-            try (PreparedStatement comando = conexao.prepareStatement(sql)) {
-                comando.setString(1, ed.getNome());
-                comando.setInt(2, ed.getCodigo());
-                resultado = comando.executeUpdate();
-            }
-        } catch (Exception e) {
-            throw new Exception("Falha na alteração", e);
-        }
-        if (resultado == 0) {
-            throw new Exception("Falha na alteração");
-        }
+    public void alterar(VitalSignDTO vs) throws Exception {
+//        String sql = "update editoras set nome=? where codigo=?";
+//        int resultado = 0;
+//        try (Connection conexao = StartDBDataSource.conectarBd()) {
+//            try (PreparedStatement comando = conexao.prepareStatement(sql)) {
+//                comando.setString(1, vs.getNome());
+//                comando.setInt(2, vs.getCodigo());
+//                resultado = comando.executeUpdate();
+//            }
+//        } catch (Exception e) {
+//            throw new Exception("Falha na alteração", e);
+//        }
+//        if (resultado == 0) {
+//            throw new Exception("Falha na alteração");
+//        }
     }
     
 }

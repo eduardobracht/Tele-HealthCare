@@ -15,9 +15,15 @@ import Business.UserAccount.UserAccount;
 import Business.VitalSign.VitalSign;
 import Business.WorkQueue.LabTechnicianWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import Persistence.VitalSign.StartDBDataSource;
+import Persistence.VitalSign.VitalSignDAO;
+import Persistence.VitalSign.VitalSignDAODTOderby;
+import Persistence.VitalSign.VitalSignDTO;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -322,13 +328,24 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
         request.setReceiver(userAccount);
         request.setResolveDate(date);
         request.setStatus("Tests Completed");
-       request.setTestResult("Report Generated");
+        request.setTestResult("Report Generated");
        
         populateRequestTable();
         
         //save on database
-        //
-
+        try {
+            StartDBDataSource.criarBd();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        VitalSignDAO vsdao = new VitalSignDAODTOderby();
+            try {
+                vsdao.inserir(new VitalSignDTO(patient.getId(), vs.getRespiratoryRate(), vs.getHeartRate(), vs.getBloodPressure(), vs.getWeight(), vs.getTimestamp(), vs.getStatusReport()));
+            } catch (Exception ex) {
+                Logger.getLogger(CreateMedicalRecordJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         JOptionPane.showMessageDialog(null, "Medical Records have been updated with Vital Signs for the Patient: "+request.getMessage(), "information", JOptionPane.INFORMATION_MESSAGE);
 
         resetFields();
