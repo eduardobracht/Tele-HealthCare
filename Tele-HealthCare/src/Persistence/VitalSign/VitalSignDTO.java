@@ -7,7 +7,7 @@ package Persistence.VitalSign;
 
 /**
  *
- * @author Neelu
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public class VitalSignDTO {
     private int patientId;

@@ -7,9 +7,7 @@ import org.apache.derby.jdbc.EmbeddedDataSource;
 
 /**
  *
- * @author Daniel
- * @author Eduardo
- * @author Leandro
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public class StartDBDataSource {
 

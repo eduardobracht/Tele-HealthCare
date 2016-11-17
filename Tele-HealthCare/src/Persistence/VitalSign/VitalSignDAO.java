@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author 13180606
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public interface VitalSignDAO {
 	List<VitalSignDTO> buscarTodos() throws Exception;

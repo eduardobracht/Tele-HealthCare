@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author 13180606
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public class VitalSignDAODTOderby implements VitalSignDAO {
 
