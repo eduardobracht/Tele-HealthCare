@@ -10,7 +10,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Daniel Machado
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public class TestVitalSign {
     
