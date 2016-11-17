@@ -31,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Neelu
+ * @author Daniel Machado, Eduardo Mallmann, Leandro Oliveira
  */
 public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
 
