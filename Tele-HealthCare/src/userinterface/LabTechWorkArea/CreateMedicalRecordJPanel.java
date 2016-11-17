@@ -70,6 +70,10 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
         }
     }
     
+    /*@ requires m != null && m.getValor() > 0;
+      @ ensures totalMoedas() == \old(totalMoedas()) + 1;
+    */
+    
     public void populatePatientCombo(){
         Organization org = null;
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
@@ -235,6 +239,8 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -242,7 +248,7 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
         cardLayout.previous(userProcessContainer);
 
     }//GEN-LAST:event_backBtnActionPerformed
-
+    
     private void btnCreateVitalSignsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateVitalSignsActionPerformed
         // TODO add your handling code here:
         int resp;
@@ -397,6 +403,7 @@ public class CreateMedicalRecordJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_patientDropBoxActionPerformed
 
     
+   
     public void resetFields(){
         respiratoryTextField.setText("");
         heartTextField.setText("");

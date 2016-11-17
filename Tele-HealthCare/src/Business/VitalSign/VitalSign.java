@@ -16,7 +16,7 @@ public class VitalSign {
     private int weight;
     private String timestamp;
     private String statusReport;
-
+      
     public VitalSign(int respiratoryRate, int heartRate, int bloodPressure, int weight,String timestamp, String statusReport) {
         this.respiratoryRate = respiratoryRate;
         this.heartRate = heartRate;
@@ -30,14 +30,16 @@ public class VitalSign {
         
     }
 
+    /*@ pure @*/    
     public int getRespiratoryRate() {
         return respiratoryRate;
     }
-
+    
     public void setRespiratoryRate(int respiratoryRate) {
         this.respiratoryRate = respiratoryRate;
     }
 
+    /*@ pure @*/
     public int getHeartRate() {
         return heartRate;
     }
@@ -46,6 +48,7 @@ public class VitalSign {
         this.heartRate = heartRate;
     }
 
+    /*@ pure @*/
     public int getBloodPressure() {
         return bloodPressure;
     }
@@ -54,6 +57,7 @@ public class VitalSign {
         this.bloodPressure = bloodPressure;
     }
 
+    /*@ pure @*/
     public int getWeight() {
         return weight;
     }
@@ -62,6 +66,7 @@ public class VitalSign {
         this.weight = weight;
     }
 
+    /*@ pure @*/
     public String getTimestamp() {
         return timestamp;
     }
@@ -70,6 +75,7 @@ public class VitalSign {
         this.timestamp = timestamp;
     }
 
+    /*@ pure @*/
     public String getStatusReport() {
         return statusReport;
     }
@@ -78,14 +84,9 @@ public class VitalSign {
         this.statusReport = statusReport;
     }
     
-    
+    /*@ pure @*/
      @Override
     public String toString() {
         return this.timestamp;
     }
-    
-    
-    
-    
-    
 }
